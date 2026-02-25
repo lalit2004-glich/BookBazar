@@ -1,0 +1,681 @@
+<!-- The above code is an HTML document that represents a webpage for a college book marketplace called
+"BookBazar". It includes sections for the header/navigation, hero section, featured categories,
+featured books, selling books, how it works, footer, and modals for selling books, book details,
+login/signup, and cart. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookBazar - College Book Marketplace</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Basic reset and minimal styling for HTML phase */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        /* We'll properly style in CSS phase */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .btn { padding: 10px 20px; text-decoration: none; display: inline-block; }
+        .section { padding: 60px 0; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <!-- ========== HEADER / NAVIGATION ========== -->
+        <!-- ========== HEADER / NAVIGATION ========== -->
+<header class="header">
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Book<span>Bazar</span></h1>
+                <p class="tagline">Your College Book Marketplace</p>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#categories" class="nav-link">Categories</a>
+                <a href="#browse" class="nav-link">Books</a>
+                <a href="#sell" class="nav-link">Sell Books</a>
+                <a href="#about" class="nav-link">About</a>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="btn btn-outline" id="loginBtn">Login</button>
+                <button class="btn btn-primary" id="signupBtn">Sign Up</button>
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                <!-- Hamburger menu button (visible only on mobile) -->
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+
+    <!-- ========== HERO SECTION ========== -->
+
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content">
+            <h2 class="hero-title">Buy, Sell & Exchange Books</h2>
+            <p class="hero-subtitle">Connect with fellow students. Find textbooks, novels, and study materials at affordable prices.</p>
+        </div>
+        <div class="hero-search">
+            <input type="text" placeholder="Search for books, authors, ISBN..." class="search-input">
+            <div class="search-category-wrapper">
+                <select class="search-category">
+                    <option value="">All Categories</option>
+                    <option value="textbooks">Textbooks</option>
+                    <option value="novels">Novels</option>
+                    <option value="business">Business</option>
+                    <option value="romance">Romance</option>
+                    <option value="academic">Academic</option>
+                    <option value="fiction">Fiction</option>
+                </select>
+            </div>
+            <button class="btn btn-primary search-btn">
+                <i class="fas fa-search"></i> Search
+            </button>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <h3>500+</h3>
+                <p>Books Available</p>
+            </div>
+            <div class="stat">
+                <h3>200+</h3>
+                <p>Active Sellers</p>
+            </div>
+            <div class="stat">
+                <h3>1000+</h3>
+                <p>Happy Students</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- ========== FEATURED CATEGORIES ========== -->
+    <section class="section categories" id="categories">
+        <div class="container">
+            <h2 class="section-title">Browse by Category</h2>
+            <p class="section-subtitle">Find books in your favorite genres</p>
+            
+            <div class="categories-grid">
+                <div class="category-card" data-category="textbooks">
+                    <div class="category-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Textbooks</h3>
+                    <p>Academic books for courses</p>
+                    <span class="book-count">150 books</span>
+                </div>
+                
+                <div class="category-card" data-category="novels">
+                    <div class="category-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Novels</h3>
+                    <p>Fiction & literature</p>
+                    <span class="book-count">120 books</span>
+                </div>
+                
+                <div class="category-card" data-category="business">
+                    <div class="category-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Business</h3>
+                    <p>Entrepreneurship & management</p>
+                    <span class="book-count">80 books</span>
+                </div>
+                
+                <div class="category-card" data-category="romance">
+                    <div class="category-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Romance</h3>
+                    <p>Love stories & relationships</p>
+                    <span class="book-count">65 books</span>
+                </div>
+                
+                <div class="category-card" data-category="academic">
+                    <div class="category-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Academic</h3>
+                    <p>Research & reference</p>
+                    <span class="book-count">90 books</span>
+                </div>
+                
+                <div class="category-card" data-category="fiction">
+                    <div class="category-icon">
+                        <i class="fas fa-dragon"></i>
+                    </div>
+                    <h3>Fiction</h3>
+                    <p>Fantasy, sci-fi & more</p>
+                    <span class="book-count">110 books</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FEATURED BOOKS ========== -->
+    <section class="section featured-books" id="browse">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Books</h2>
+                <div class="section-actions">
+                    <button class="btn-filter active" data-filter="all">All</button>
+                    <button class="btn-filter" data-filter="new">New Arrivals</button>
+                    <button class="btn-filter" data-filter="discount">Best Deals</button>
+                    <button class="btn-filter" data-filter="popular">Most Popular</button>
+                </div>
+            </div>
+            
+            <div class="books-grid" id="booksContainer">
+                <!-- Books will be loaded here by JavaScript -->
+                <div class="loading">Loading books...</div>
+            </div>
+            
+            <div class="section-footer">
+                <button class="btn btn-outline" id="loadMoreBtn">Load More Books</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SELL BOOKS SECTION ========== -->
+    <section class="section sell-section" id="sell">
+        <div class="container">
+            <div class="sell-content">
+                <div class="sell-info">
+                    <h2 class="section-title">Sell Your Books</h2>
+                    <p class="section-subtitle">Turn your old books into cash. Easy listing, fast selling.</p>
+                    
+                    <div class="sell-features">
+                        <div class="feature">
+                            <i class="fas fa-upload"></i>
+                            <h4>Easy Listing</h4>
+                            <p>List your book in under 2 minutes</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-rupee-sign"></i>
+                            <h4>Set Your Price</h4>
+                            <p>You decide how much to sell for</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-handshake"></i>
+                            <h4>Connect Directly</h4>
+                            <p>Meet buyers from your college</p>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary btn-large" id="sellBookBtn">
+                        <i class="fas fa-plus-circle"></i> List a Book for Sale
+                    </button>
+                </div>
+                
+                <div class="sell-image">
+                    <!-- Will add image in CSS phase -->
+                    <div class="image-placeholder">📚 Book Image Here</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== HOW IT WORKS ========== -->
+    <section class="section how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Browse or Search</h3>
+                    <p>Find books by category, author, or ISBN</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Connect with Seller</h3>
+                    <p>Message the seller directly through platform</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Arrange Meetup</h3>
+                    <p>Schedule a campus meetup for exchange</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Complete Transaction</h3>
+                    <p>Exchange book and payment safely</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <!-- ========== FOOTER ========== -->
+<footer class="footer">
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <button id="backToTopBtn" class="btn-back-to-top">Back to top</button>
+    </div>
+
+    <div class="container">
+        <!-- Main Footer Columns -->
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>BookBazar</h3>
+                <p>Your trusted college book marketplace. Connecting readers since 2024.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Get to Know Us</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#browse">Browse Books</a></li>
+                    <li><a href="#sell">Sell Books</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Make Money with Us</h4>
+                <ul>
+                    <li><a href="#" data-category="textbooks">Sell on BookBazar</a></li>
+                    <li><a href="#" data-category="novels">Become an Affiliate</a></li>
+                    <li><a href="#" data-category="business">Advertise Your Books</a></li>
+                    <li><a href="#" data-category="academic">Fulfillment by BookBazar</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Let Us Help You</h4>
+                <ul>
+                    <li><a href="#">Your Account</a></li>
+                    <li><a href="#">Returns Centre</a></li>
+                    <li><a href="#">100% Purchase Protection</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Language / Region Selector (static demo) -->
+        <div class="footer-region">
+            <span class="region-item"><i class="fas fa-globe"></i> English</span>
+            <span class="region-item">India</span>
+        </div>
+
+        <!-- Bottom Bar with Legal Links -->
+        <div class="footer-bottom">
+            <div class="legal-links">
+                <a href="#">Conditions of Use</a>
+                <a href="#">Privacy Notice</a>
+                <a href="#">Internet-Based Ads</a>
+            </div>
+            <p>&copy; 2024 BookBazar. Made for College Placement Project. This is a frontend demonstration project.</p>
+        </div>
+    </div>
+</footer>
+
+    <!-- ========== MODALS (Hidden by default) ========== -->
+    
+    <!-- Sell Book Modal -->
+    <div class="modal" id="sellBookModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>List Your Book for Sale</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            
+            <form id="sellBookForm" class="modal-form">
+                <div class="form-group">
+                    <label for="bookTitle">Book Title *</label>
+                    <input type="text" id="bookTitle" required placeholder="Enter book title">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="bookAuthor">Author *</label>
+                        <input type="text" id="bookAuthor" required placeholder="Author name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bookCategory">Category *</label>
+                        <select id="bookCategory" required>
+                            <option value="">Select Category</option>
+                            <option value="textbooks">Textbooks</option>
+                            <option value="novels">Novels</option>
+                            <option value="business">Business</option>
+                            <option value="romance">Romance</option>
+                            <option value="academic">Academic</option>
+                            <option value="fiction">Fiction</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="bookPrice">Price (₹) *</label>
+                        <input type="number" id="bookPrice" required min="1" placeholder="499">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bookCondition">Condition *</label>
+                        <select id="bookCondition" required>
+                            <option value="">Select Condition</option>
+                            <option value="new">New</option>
+                            <option value="like-new">Like New</option>
+                            <option value="good">Good</option>
+                            <option value="fair">Fair</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="bookDescription">Description *</label>
+                    <textarea id="bookDescription" rows="3" required 
+                              placeholder="Describe your book's condition, edition, special features..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="bookImage">Book Image URL</label>
+                    <input type="text" id="bookImage" 
+                           placeholder="Paste image URL (or leave blank for default)">
+                    <small>You can upload to imgur.com and paste the link here</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="sellerName">Your Name *</label>
+                    <input type="text" id="sellerName" required placeholder="Your name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="sellerContact">Contact Info *</label>
+                    <input type="text" id="sellerContact" required placeholder="Phone/Email">
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline modal-close">Cancel</button>
+                    <button type="submit" class="btn btn-primary">List Book for Sale</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Book Details Modal -->
+    <div class="modal" id="bookDetailsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalBookTitle">Book Title</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            
+            <div class="modal-body" id="modalBookDetails">
+                <!-- Book details will be inserted by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Login/Signup Modal -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="authModalTitle">Welcome to BookBazar</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Login</button>
+                <button class="auth-tab" data-tab="signup">Sign Up</button>
+            </div>
+            
+            <form id="loginForm" class="auth-form active">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" placeholder="student@college.edu" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="••••••••" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                
+                <p class="auth-note">
+                    <small>Demo Note: This is frontend-only. Any credentials will work.</small>
+                </p>
+            </form>
+            
+            <form id="signupForm" class="auth-form">
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" placeholder="Your name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" placeholder="student@college.edu" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" placeholder="••••••••" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="userType">I want to</label>
+                    <select id="userType" required>
+                        <option value="buyer">Buy Books</option>
+                        <option value="seller">Sell Books</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                
+                <p class="auth-note">
+                    <small>This is a demo. No real account will be created.</small>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Your Shopping Cart</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be inserted by JavaScript -->
+                <div class="empty-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p>Your cart is empty</p>
+                </div>
+            </div>
+            
+            <div class="cart-summary">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotalAmount">₹0</span>
+                </div>
+                <button class="btn btn-primary btn-block" id="checkoutBtn">Proceed to Checkout</button>
+                <p class="cart-note">
+                    <small>Note: This is a demo. No actual purchase will be made.</small>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Data (Will move to separate file in JS phase) -->
+    <script>
+        // We'll create a proper JavaScript file later
+        // This is just placeholder for now
+        
+        // Modal functionality placeholder
+        document.querySelectorAll('.modal-close').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Will implement in JS phase
+            });
+        });
+    </script>
+
+    <!-- ========== USER DASHBOARD (Hidden by default) ========== -->
+<section class="dashboard-section hidden" id="dashboard">
+    <div class="container">
+        <!-- Welcome Header -->
+        <div class="dashboard-header">
+            <div class="user-greeting">
+                <h2>Welcome, <span id="userName">Student</span>! 👋</h2>
+                <p id="userEmail">student@college.edu</p>
+            </div>
+            <button class="btn btn-outline" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="cartCount">0</h3>
+                    <p>Items in Cart</p>
+                </div>
+                <a href="#cart" class="stat-link">View Cart →</a>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="wishlistCount">0</h3>
+                    <p>Wishlisted Items</p>
+                </div>
+                <a href="#wishlist" class="stat-link">View Wishlist →</a>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-box"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="orderCount">0</h3>
+                    <p>Active Orders</p>
+                </div>
+                <a href="#orders" class="stat-link">Track Orders →</a>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="messageCount">0</h3>
+                    <p>Unread Messages</p>
+                </div>
+                <a href="#messages" class="stat-link">View Messages →</a>
+            </div>
+        </div>
+
+        <!-- Main Dashboard Content -->
+        <div class="dashboard-content">
+            <!-- Left Column - Recent Activity -->
+            <div class="dashboard-col">
+                <div class="dashboard-card">
+                    <h3>Recent Activity</h3>
+                    <div class="activity-list" id="activityList">
+                        <!-- Activities will be added by JavaScript -->
+                        <div class="activity-item">
+                            <i class="fas fa-search activity-icon"></i>
+                            <div>
+                                <p>You viewed "Web Development Basics"</p>
+                                <small>2 hours ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <h3>Recommended For You</h3>
+                    <div class="recommended-books" id="recommendedBooks">
+                        <!-- Recommended books will be added by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column - Quick Actions -->
+            <div class="dashboard-col">
+                <div class="dashboard-card">
+                    <h3>Quick Actions</h3>
+                    <div class="quick-actions-grid">
+                        <button class="quick-action" id="quickSell">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>Sell a Book</span>
+                        </button>
+                        <button class="quick-action" id="quickSearch">
+                            <i class="fas fa-search"></i>
+                            <span>Search Books</span>
+                        </button>
+                        <button class="quick-action" id="quickCart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Go to Cart</span>
+                        </button>
+                        <button class="quick-action" id="quickProfile">
+                            <i class="fas fa-user-edit"></i>
+                            <span>Edit Profile</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <h3>Your Orders</h3>
+                    <div class="orders-list" id="ordersList">
+                        <!-- Orders will be added by JavaScript -->
+                        <div class="empty-state">
+                            <i class="fas fa-box-open"></i>
+                            <p>No orders yet</p>
+                            <button class="btn btn-sm" id="browseBooksBtn">Browse Books</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+ <script src="./script.js"></script>
+</body>
+</html>
