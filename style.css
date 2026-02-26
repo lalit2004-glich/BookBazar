@@ -1276,9 +1276,32 @@ gap: var(--space-md);
 }
 
 .form-actions {
-display: flex;
-gap: var(--space-md);
-margin-top: var(--space-md);
+    display: flex;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+    flex-wrap: wrap;        /* ✅ allows buttons to wrap */
+    align-items: center;
+}
+
+.form-actions .btn {
+    flex: 1;                /* ✅ equal width sharing */
+    min-width: 120px;       /* ✅ don't shrink too small */
+    white-space: nowrap;    /* ✅ text stays on one line */
+    text-align: center;
+    padding: 0.6rem 1rem;   /* ✅ controlled padding */
+    font-size: 0.95rem;
+}
+
+/* Mobile fix */
+@media (max-width: 480px) {
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+        flex: none;
+    }
 }
 
 /* ========== AUTH MODAL ========== */
