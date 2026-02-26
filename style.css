@@ -1286,9 +1286,20 @@ gap: var(--space-md);
 }
 
 .form-actions {
-display: flex;
-gap: var(--space-md);
-margin-top: var(--space-md);
+    display: flex;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+    flex-wrap: wrap; /* 👈 This is the key */
+}
+
+@media (max-width: 480px) {
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+    }
 }
 
 /* ========== AUTH MODAL ========== */
