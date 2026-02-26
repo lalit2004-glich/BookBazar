@@ -759,6 +759,42 @@ gap: var(--space-md);
 margin: var(--space-xl) 0;
 }
 
+/* Sell button ko properly space do */
+.sell-info .btn-large {
+    white-space: normal;      /* text wrap allowed */
+    word-break: break-word;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    width: 100%;              /* mobile me full width */
+    max-width: 350px;         /* lekin zyada bada nahi */
+    margin-top: var(--space-md);
+}
+
+@media (min-width: 768px) {
+    .sell-info .btn-large {
+        width: auto;          /* desktop me auto width */
+        padding: 1rem 2rem;   /* original padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .sell-info .btn-large {
+        font-size: 0.9rem;
+        padding: 0.6rem 0.8rem;
+    }
+}
+
+/* Sell content grid gap ensure karo */
+.sell-content {
+    gap: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+    .sell-content {
+        gap: var(--space-lg);
+    }
+}
+
 .feature {
 text-align: center;
 padding: var(--space-md);
