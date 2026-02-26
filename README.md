@@ -80,7 +80,7 @@ Important Notes:
 Support:
 
 For basic setup support, contact:
-your-email@gmail.com
+your-Lalit.k123121@gmail.com
 
 ---------------------------------------------------
 
