@@ -176,7 +176,6 @@ function initializeElements() {
 
 // ========== INITIALIZATION ==========
 function init() {
-    console.log("Initializing BookBazar...");
     
     // Initialize DOM elements
     initializeElements();
@@ -248,7 +247,6 @@ function init() {
     // Check if user is logged in
     checkLoginStatus();
     
-    console.log('BookBazar initialized successfully!');
 }
 
 // ========== DATA MANAGEMENT ==========
@@ -262,8 +260,6 @@ function loadData() {
     cart = savedCart ? JSON.parse(savedCart) : [];
     currentUser = savedUser ? JSON.parse(savedUser) : null;
     
-    console.log("Loaded books:", books.length);
-    console.log("Loaded cart items:", cart.length);
 }
 
 function saveData() {
@@ -284,7 +280,6 @@ function renderBooks(filteredBooks = null) {
         return;
     }
     
-    console.log("Rendering books:", booksToRender.length);
     
     container.innerHTML = '';
     
@@ -961,7 +956,6 @@ function setupEventListeners() {
 // ========== START APPLICATION ==========
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
-    console.log("DOM loaded, initializing...");
     init();
 });
 
