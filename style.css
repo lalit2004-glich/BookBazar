@@ -592,21 +592,35 @@ display: flex;
 gap: var(--space-sm);
 }
 
-.books-grid {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-gap: var(--space-lg);
-margin-bottom: var(--space-xl);
+/* Fix button overflow on book cards */
+.book-card {
+    overflow: hidden; /* already set, but ensure z-index stacking */
+    isolation: isolate; /* creates new stacking context — prevents bleed-over */
 }
 
-.book-card {
-background: var(--white);
-border-radius: var(--radius-lg);
-overflow: hidden;
-box-shadow: var(--shadow-md);
-transition: var(--transition-normal);
-border: 1px solid var(--light-gray);
-position: relative;
+.book-info {
+    overflow: hidden; /* contain buttons within card */
+}
+
+.book-actions {
+    display: flex;
+    gap: var(--space-xs); /* tighten gap */
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.book-actions .btn {
+    flex: 1 1 45%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;     /* prevent text wrapping that causes overflow */
+    font-size: 0.85rem;      /* slightly smaller to fit within card */
+    padding: 0.5rem 0.6rem;
+}
+
+/* Ensure no card content bleeds into neighboring cards */
+.books-grid {
+    isolation: isolate;
 }
 
 .book-card:hover {
