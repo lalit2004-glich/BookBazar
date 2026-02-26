@@ -599,6 +599,16 @@ gap: var(--space-lg);
 margin-bottom: var(--space-xl);
 }
 
+.book-card {
+background: var(--white);
+border-radius: var(--radius-lg);
+overflow: hidden;
+box-shadow: var(--shadow-md);
+transition: var(--transition-normal);
+border: 1px solid var(--light-gray);
+position: relative;
+}
+
 .book-card:hover {
 transform: translateY(-8px);
 box-shadow: var(--shadow-xl);
@@ -692,23 +702,14 @@ border: 1px solid var(--light-gray);
 }
 
 .book-actions {
-    display: flex;
-    gap: var(--space-sm);
-    flex-wrap: wrap; /* Allow wrapping */
+display: flex;
+gap: var(--space-sm);
 }
 
 .book-actions .btn {
-    flex: 1 1 45%;  /* allows wrapping instead of forcing equal stretch */
-}
-
-@media (max-width: 480px) {
-    .book-actions {
-        flex-direction: column;
-    }
-
-    .book-actions .btn {
-        width: 100%;
-    }
+flex: 1;
+padding: 0.5rem;
+font-size: 0.9rem;
 }
 
 .loading {
@@ -757,7 +758,6 @@ grid-template-columns: repeat(3, 1fr);
 gap: var(--space-md);
 margin: var(--space-xl) 0;
 }
-
 
 .feature {
 text-align: center;
@@ -1276,20 +1276,9 @@ gap: var(--space-md);
 }
 
 .form-actions {
-    display: flex;
-    gap: var(--space-md);
-    margin-top: var(--space-md);
-    flex-wrap: wrap; /* 👈 This is the key */
-}
-
-@media (max-width: 480px) {
-    .form-actions {
-        flex-direction: column;
-    }
-
-    .form-actions .btn {
-        width: 100%;
-    }
+display: flex;
+gap: var(--space-md);
+margin-top: var(--space-md);
 }
 
 /* ========== AUTH MODAL ========== */
