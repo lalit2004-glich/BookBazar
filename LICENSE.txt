@@ -1,0 +1,17 @@
+BookBazar - License Agreement
+Copyright (c) 2026 Lalit. All rights reserved.
+
+Permission is granted to use this project for personal and commercial purposes.
+
+You are allowed to:
+- Modify the code
+- Use it for client projects
+- Deploy it as part of your own application
+
+You are NOT allowed to:
+- Resell this template as your own
+- Redistribute the source code
+- Upload it to marketplaces
+- Share the full source publicly
+
+The author is not liable for any damages or misuse of this product.
