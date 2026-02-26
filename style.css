@@ -702,14 +702,23 @@ border: 1px solid var(--light-gray);
 }
 
 .book-actions {
-display: flex;
-gap: var(--space-sm);
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap; /* Allow wrapping */
 }
 
 .book-actions .btn {
-flex: 1;
-padding: 0.5rem;
-font-size: 0.9rem;
+    flex: 1 1 45%;  /* allows wrapping instead of forcing equal stretch */
+}
+
+@media (max-width: 480px) {
+    .book-actions {
+        flex-direction: column;
+    }
+
+    .book-actions .btn {
+        width: 100%;
+    }
 }
 
 .loading {
