@@ -4,7 +4,7 @@ Created by: Lalit
 Tech Stack: HTML, CSS, Vanilla JavaScript
 Version: 1.0
 
----------------------------------------------------
+--------------------------------------------------
 
 Project Overview:
 
@@ -18,7 +18,7 @@ This project is designed for:
 - Campus reselling platforms
 - Developers building marketplace systems
 
----------------------------------------------------
+--------------------------------------------------
 
 Project Purpose:
 
